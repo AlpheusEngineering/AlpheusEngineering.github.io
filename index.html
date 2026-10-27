@@ -52,7 +52,7 @@
     .site-header{
       position:sticky;
       top:0;
-      z-index:50;
+      z-index:60;
       backdrop-filter: blur(14px);
       background: rgba(3, 8, 12, 0.62);
       border-bottom:1px solid rgba(255,255,255,0.04);
@@ -75,18 +75,18 @@
 
     .brand-mark-wrap {
       width: 190px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .brand-mark {
       display:block;
-      width: 100%;
-      height: auto;
-      max-height: 110px;
-      object-fit: contain;
-      background: transparent;
+      width:100%;
+      height:auto;
+      max-height:110px;
+      object-fit:contain;
+      background:transparent;
       filter: drop-shadow(0 0 18px rgba(83,210,255,0.22));
     }
 
@@ -127,11 +127,7 @@
       transition:0.25s ease;
     }
 
-    .nav a:hover{
-      color:var(--text);
-      opacity:1;
-    }
-
+    .nav a:hover{ color:var(--text); opacity:1; }
     .nav a:hover::after{ transform:scaleX(1); }
 
     .lang-switch{
@@ -170,6 +166,7 @@
       background:
         radial-gradient(circle at 50% 12%, rgba(14,128,205,0.12), transparent 24%),
         linear-gradient(180deg, rgba(2,9,15,0.8), rgba(5,13,18,0.7));
+      padding-bottom:82px;
     }
 
     .hero::before{
@@ -189,7 +186,7 @@
       align-items:center;
       min-height:760px;
       gap:28px;
-      padding:48px 0 36px;
+      padding:48px 0 15px;
     }
 
     .eyebrow{
@@ -261,7 +258,7 @@
       display:flex;
       flex-wrap:wrap;
       gap:18px;
-      margin-top:10px;
+      margin-top:12px;
     }
 
     .trust-item{
@@ -332,7 +329,7 @@
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:18px;
-      transform:translateY(50%);
+      transform:none;
     }
 
     .stat{
@@ -341,6 +338,10 @@
       border-radius:18px;
       padding:26px 22px;
       box-shadow:0 18px 38px rgba(0,0,0,0.22);
+      min-height:160px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
     .stat-value{
@@ -350,6 +351,7 @@
       letter-spacing:-0.06em;
       color:var(--text);
       margin-bottom:8px;
+      line-height:1;
     }
 
     .stat-label{
@@ -357,6 +359,7 @@
       font-size:0.8rem;
       letter-spacing:0.1em;
       text-transform:uppercase;
+      min-height:24px;
     }
 
     section.section{
@@ -452,7 +455,7 @@
 
     .team-grid{
       display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
+      grid-template-columns:repeat(5, minmax(0,1fr));
       gap:24px;
       margin-top:26px;
     }
@@ -466,7 +469,7 @@
     }
 
     .portrait{
-      height:310px;
+      height:250px;
       background:
         linear-gradient(180deg, rgba(116,124,132,0.1), rgba(10,14,18,0.4)),
         radial-gradient(circle at 40% 20%, rgba(210,229,235,0.7), rgba(102,109,119,0.32) 18%, rgba(20,26,31,0.6) 52%, rgba(5,8,10,0.9) 100%);
@@ -480,8 +483,8 @@
       left:50%;
       top:26%;
       transform:translateX(-50%);
-      width:112px;
-      height:112px;
+      width:110px;
+      height:110px;
       border-radius:50%;
       background:radial-gradient(circle at 35% 30%, #f1f8fa, #bccacb 36%, #6f7a80 70%, #3c4652 100%);
       box-shadow:0 0 0 12px rgba(21,27,32,0.45);
@@ -493,8 +496,8 @@
       left:50%;
       bottom:0;
       transform:translateX(-50%);
-      width:170px;
-      height:120px;
+      width:160px;
+      height:90px;
       border-radius:50% 50% 0 0 / 100% 100% 0 0;
       background:linear-gradient(180deg, rgba(29,39,47,0.9), rgba(17,21,25,0.9));
       box-shadow:0 -16px 28px rgba(0,0,0,0.18);
@@ -674,10 +677,7 @@
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
 
-      .brand-row{
-        flex-wrap:wrap;
-        padding:16px 0;
-      }
+      .brand-row{ flex-wrap:wrap; padding:16px 0; }
 
       .nav{
         order:3;
@@ -689,49 +689,15 @@
     }
 
     @media (max-width: 640px){
-      .container{
-        width:min(100% - 28px, 1200px);
-      }
-
-      .hero-grid{
-        min-height:unset;
-        padding-top:26px;
-      }
-
-      .stats{
-        grid-template-columns:1fr;
-        transform:none;
-        margin-top:18px;
-        margin-bottom:18px;
-      }
-
-      .projects-grid,
-      .team-grid,
-      .contact-points{
-        grid-template-columns:1fr;
-      }
-
-      .nav{
-        gap:14px 18px;
-        font-size:0.72rem;
-      }
-
-      .brand-word{
-        letter-spacing:0.12em;
-      }
-
-      .btn{
-        width:100%;
-      }
-
-      .cta-row{
-        flex-direction:column;
-      }
-
-      .footer-inner{
-        flex-direction:column;
-        text-align:center;
-      }
+      .container{ width:min(100% - 28px, 1200px); }
+      .hero-grid{ min-height:unset; padding-top:26px; }
+      .stats{ grid-template-columns:1fr; margin-top:18px; margin-bottom:18px; }
+      .projects-grid, .team-grid, .contact-points{ grid-template-columns:1fr; }
+      .nav{ gap:14px 18px; font-size:0.72rem; }
+      .brand-word{ letter-spacing:0.12em; }
+      .btn{ width:100%; }
+      .cta-row{ flex-direction:column; }
+      .footer-inner{ flex-direction:column; text-align:center; }
     }
   </style>
 </head>
@@ -746,10 +712,10 @@
       </div>
 
       <nav class="nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#projects">Applied Projects</a>
-        <a href="#team">Leadership & Experts</a>
-        <a href="#contact">Partner with Us</a>
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#projects" data-i18n="navProjects">Applied Projects</a>
+        <a href="#team" data-i18n="navTeam">Leadership & Experts</a>
+        <a href="#contact" data-i18n="navContact">Partner with Us</a>
       </nav>
 
       <div class="lang-switch" aria-label="Language switch">
@@ -763,22 +729,18 @@
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">End-to-End Environmental Infrastructure</div>
-          <h1>Turning complex water and sustainability challenges into resilient infrastructure.</h1>
-          <p>
-            Alpheus Engineering INC CORP is not just a consultancy — we execute state and municipal infrastructure projects,
-            deliver operational systems, and train the teams that keep them running. From project delivery to plant performance,
-            we are built for public-sector reliability.
-          </p>
+          <div class="eyebrow" data-i18n="eyebrow">End-to-End Environmental Infrastructure</div>
+          <h1 data-i18n="heroTitle">Turning complex water and sustainability challenges into resilient infrastructure.</h1>
+          <p data-i18n="heroText">Alpheus Engineering INC CORP is not just a consultancy — we execute state and municipal infrastructure projects, deliver operational systems, and train the teams that keep them running. From project delivery to plant performance, we are built for public-sector reliability.</p>
 
           <div class="cta-row">
-            <a href="#projects" class="btn primary">Applied Projects</a>
-            <a href="#team" class="btn secondary">Leadership & Experts</a>
+            <a href="#projects" class="btn primary" data-i18n="ctaProjects">Applied Projects</a>
+            <a href="#team" class="btn secondary" data-i18n="ctaTeam">Leadership & Experts</a>
           </div>
 
           <div class="trust-badges">
-            <div class="trust-item"><span class="dot"></span> <span>5–6 Year Track Record</span></div>
-            <div class="trust-item"><span class="dot"></span> <span>Turnkey Delivery</span></div>
+            <div class="trust-item"><span class="dot"></span> <span data-i18n="badgeTrack">5–6 Year Track Record</span></div>
+            <div class="trust-item"><span class="dot"></span> <span data-i18n="badgeDelivery">Turnkey Delivery</span></div>
           </div>
         </div>
 
@@ -859,15 +821,15 @@
       <div class="stats" aria-label="Company statistics">
         <div class="stat">
           <span class="stat-value" data-target="48">0</span>
-          <span class="stat-label">Mega Projects Completed</span>
+          <span class="stat-label" data-i18n="statProjects">Mega Projects Completed</span>
         </div>
         <div class="stat">
           <span class="stat-value" data-target="2.9">0</span>
-          <span class="stat-label">Million Tons of Water Purified</span>
+          <span class="stat-label" data-i18n="statWater">Million Tons of Water Purified</span>
         </div>
         <div class="stat">
           <span class="stat-value" data-target="18">0</span>
-          <span class="stat-label">Active State Tenders</span>
+          <span class="stat-label" data-i18n="statTenders">Active State Tenders</span>
         </div>
       </div>
     </section>
@@ -875,49 +837,46 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Capabilities & Solutions</div>
-          <h2>High-impact environmental engineering, delivered with certainty.</h2>
-          <p>
-            We combine engineering precision, operational discipline, and project execution to deliver infrastructure that is practical,
-            efficient, and built to last.
-          </p>
+          <div class="eyebrow" data-i18n="capabilitiesEyebrow">Capabilities & Solutions</div>
+          <h2 data-i18n="capabilitiesTitle">High-impact environmental engineering, delivered with certainty.</h2>
+          <p data-i18n="capabilitiesText">We combine engineering precision, operational discipline, and project execution to deliver infrastructure that is practical, efficient, and built to last.</p>
         </div>
 
         <div class="projects-grid">
           <article class="project-card">
             <div class="card-icon">◈</div>
-            <h3>Seawater Desalination</h3>
-            <p>Integrated treatment schemes, process design, and plant execution for water security and industrial supply.</p>
+            <h3 data-i18n="card1Title">Seawater Desalination</h3>
+            <p data-i18n="card1Text">Integrated treatment schemes, process design, and plant execution for water security and industrial supply.</p>
           </article>
 
           <article class="project-card">
             <div class="card-icon">◬</div>
-            <h3>Air Pollution & Flue Gas Treatment</h3>
-            <p>Emission control systems and treatment units designed to improve compliance and environmental performance.</p>
+            <h3 data-i18n="card2Title">Air Pollution & Flue Gas Treatment</h3>
+            <p data-i18n="card2Text">Emission control systems and treatment units designed to improve compliance and environmental performance.</p>
           </article>
 
           <article class="project-card">
             <div class="card-icon">△</div>
-            <h3>Solar Solutions</h3>
-            <p>Renewable power integration for utilities, industrial operations, and sustainable infrastructure planning.</p>
+            <h3 data-i18n="card3Title">Solar Solutions</h3>
+            <p data-i18n="card3Text">Renewable power integration for utilities, industrial operations, and sustainable infrastructure planning.</p>
           </article>
 
           <article class="project-card">
             <div class="card-icon">▣</div>
-            <h3>Wastewater Treatment Plants</h3>
-            <p>Biological, chemical, and physical treatment systems engineered for municipal and industrial outputs.</p>
+            <h3 data-i18n="card4Title">Wastewater Treatment Plants</h3>
+            <p data-i18n="card4Text">Biological, chemical, and physical treatment systems engineered for municipal and industrial outputs.</p>
           </article>
 
           <article class="project-card">
             <div class="card-icon">▤</div>
-            <h3>Pump Systems Consulting</h3>
-            <p>Hydraulic design, equipment selection, and optimization services for reliable process flow and performance.</p>
+            <h3 data-i18n="card5Title">Pump Systems Consulting</h3>
+            <p data-i18n="card5Text">Hydraulic design, equipment selection, and optimization services for reliable process flow and performance.</p>
           </article>
 
           <article class="project-card">
             <div class="card-icon">◎</div>
-            <h3>Infrastructure Operational Training</h3>
-            <p>Hands-on technical training that prepares operational teams to run and maintain critical environmental systems.</p>
+            <h3 data-i18n="card6Title">Infrastructure Operational Training</h3>
+            <p data-i18n="card6Text">Hands-on technical training that prepares operational teams to run and maintain critical environmental systems.</p>
           </article>
         </div>
       </div>
@@ -926,45 +885,54 @@
     <section id="team" class="section alt">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Leadership & Experts</div>
-          <h2>Technical leaders with public-sector delivery experience.</h2>
-          <p>Our leadership combines engineering expertise, strategic project governance, and operational understanding rooted in infrastructure execution.</p>
+          <div class="eyebrow" data-i18n="teamEyebrow">Leadership & Experts</div>
+          <h2 data-i18n="teamTitle">Technical leaders with public-sector delivery experience.</h2>
+          <p data-i18n="teamText">Our leadership combines engineering expertise, strategic project governance, and operational understanding rooted in infrastructure execution.</p>
         </div>
 
         <div class="team-grid">
           <article class="team-card">
             <div class="portrait" aria-hidden="true"></div>
             <div class="team-copy">
-              <h3>Orhan Alp</h3>
-              <span class="role">Founder & Managing Director</span>
-              <p>A project and utilities executive with deep experience in municipal engineering, infrastructure delivery, and institutional partnerships.</p>
+              <h3 data-i18n="person1Name">Orhan Alp</h3>
+              <span class="role" data-i18n="person1Role">Founder & Managing Director</span>
+              <p data-i18n="person1Bio">A project and utilities executive with deep experience in municipal engineering, infrastructure delivery, and institutional partnerships.</p>
             </div>
           </article>
 
           <article class="team-card">
             <div class="portrait" aria-hidden="true"></div>
             <div class="team-copy">
-              <h3>Mert Yalçın</h3>
-              <span class="role">Environmental Process Lead</span>
-              <p>Specializes in water treatment systems and environmental process design for public infrastructure, industrial projects, and regulatory compliance.</p>
+              <h3 data-i18n="person2Name">Mert Yalçın</h3>
+              <span class="role" data-i18n="person2Role">Environmental Process Lead</span>
+              <p data-i18n="person2Bio">Specializes in water treatment systems and environmental process design for public infrastructure, industrial projects, and regulatory compliance.</p>
             </div>
           </article>
 
           <article class="team-card">
             <div class="portrait" aria-hidden="true"></div>
             <div class="team-copy">
-              <h3>Elif Demir</h3>
-              <span class="role">Operational Training Director</span>
-              <p>Brings practical knowledge in facility operations, maintenance strategy, and training frameworks that improve reliability and sustainability performance.</p>
+              <h3 data-i18n="person3Name">Elif Demir</h3>
+              <span class="role" data-i18n="person3Role">Operational Training Director</span>
+              <p data-i18n="person3Bio">Brings practical knowledge in facility operations, maintenance strategy, and training frameworks that improve reliability and sustainability performance.</p>
             </div>
           </article>
 
           <article class="team-card">
             <div class="portrait" aria-hidden="true"></div>
             <div class="team-copy">
-              <h3>Kerem Aydın</h3>
-              <span class="role">Technical Consultant</span>
-              <p>Supports complex engineering planning across flue gas treatment, solar integration, and operational optimization for large-scale facilities.</p>
+              <h3 data-i18n="person4Name">Kerem Aydın</h3>
+              <span class="role" data-i18n="person4Role">Technical Consultant</span>
+              <p data-i18n="person4Bio">Supports complex engineering planning across flue gas treatment, solar integration, and operational optimization for large-scale facilities.</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="portrait" aria-hidden="true"></div>
+            <div class="team-copy">
+              <h3 data-i18n="person5Name">Deniz Ok</h3>
+              <span class="role" data-i18n="person5Role">Project Governance Lead</span>
+              <p data-i18n="person5Bio">Coordinates multidisciplinary teams, public tender strategy, and execution planning for sustainable infrastructure delivery.</p>
             </div>
           </article>
         </div>
@@ -976,37 +944,34 @@
         <div class="contact-wrap">
           <div class="contact-panel">
             <div>
-              <div class="eyebrow">Partner with Us</div>
-              <h3>Build lasting environmental infrastructure with a trusted execution partner.</h3>
-              <p>
-                We collaborate with public institutions, municipal authorities, developers, and industrial organizations
-                to deliver sustainable systems and reliable project execution.
-              </p>
+              <div class="eyebrow" data-i18n="contactEyebrow">Partner with Us</div>
+              <h3 data-i18n="contactTitle">Build lasting environmental infrastructure with a trusted execution partner.</h3>
+              <p data-i18n="contactText">We collaborate with public institutions, municipal authorities, developers, and industrial organizations to deliver sustainable systems and reliable project execution.</p>
             </div>
 
             <div class="contact-points">
               <div class="mini-card">
-                <span class="kicker">Project Delivery</span>
-                <strong>Turnkey Infrastructure</strong>
-                <span>Design, execution, commissioning, and performance support.</span>
+                <span class="kicker" data-i18n="contactC1Label">Project Delivery</span>
+                <strong data-i18n="contactC1Title">Turnkey Infrastructure</strong>
+                <span data-i18n="contactC1Text">Design, execution, commissioning, and performance support.</span>
               </div>
               <div class="mini-card">
-                <span class="kicker">Training</span>
-                <strong>Operational Readiness</strong>
-                <span>Technical education for operators and maintenance teams.</span>
+                <span class="kicker" data-i18n="contactC2Label">Training</span>
+                <strong data-i18n="contactC2Title">Operational Readiness</strong>
+                <span data-i18n="contactC2Text">Technical education for operators and maintenance teams.</span>
               </div>
             </div>
           </div>
 
           <div class="contact-side">
-            <a class="cta" href="mailto:alpheusengineering@gmail.com">Email Us</a>
+            <a class="cta" href="mailto:alpheusengineering@gmail.com" data-i18n="ctaMail">Email Us</a>
             <div class="tall">
-              <strong>Direct Contact</strong>
-              <span>alpheusengineering@gmail.com</span>
+              <strong data-i18n="mailTitle">Direct Contact</strong>
+              <span data-i18n="mailText">alpheusengineering@gmail.com</span>
             </div>
             <div class="tall">
-              <strong>Execution Focus</strong>
-              <span>Water, energy, environmental compliance, and public infrastructure capability.</span>
+              <strong data-i18n="focusTitle">Execution Focus</strong>
+              <span data-i18n="focusText">Water, energy, environmental compliance, and public infrastructure capability.</span>
             </div>
           </div>
         </div>
@@ -1029,7 +994,6 @@
     function drawLogoData() {
       canvas.width = 900;
       canvas.height = 500;
-
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const shine = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
@@ -1046,7 +1010,6 @@
 
       ctx.save();
       ctx.translate(30, 0);
-
       ctx.beginPath();
       ctx.moveTo(252, 360);
       ctx.lineTo(378, 94);
@@ -1063,7 +1026,6 @@
       ctx.fill();
       ctx.restore();
 
-      ctx.save();
       ctx.beginPath();
       ctx.moveTo(170, 360);
       ctx.lineTo(316, 96);
@@ -1072,9 +1034,7 @@
       ctx.closePath();
       ctx.fillStyle = 'rgba(255,255,255,0.18)';
       ctx.fill();
-      ctx.restore();
 
-      ctx.save();
       ctx.beginPath();
       ctx.moveTo(468, 248);
       ctx.lineTo(608, 360);
@@ -1083,9 +1043,7 @@
       ctx.closePath();
       ctx.fillStyle = 'rgba(0,0,0,0.18)';
       ctx.fill();
-      ctx.restore();
 
-      ctx.save();
       ctx.beginPath();
       ctx.moveTo(314, 98);
       ctx.lineTo(470, 360);
@@ -1094,9 +1052,7 @@
       ctx.closePath();
       ctx.fillStyle = 'rgba(255,255,255,0.18)';
       ctx.fill();
-      ctx.restore();
 
-      ctx.save();
       ctx.beginPath();
       ctx.moveTo(150, 360);
       ctx.quadraticCurveTo(230, 190, 355, 170);
@@ -1107,17 +1063,13 @@
       ctx.shadowColor = 'rgba(72,203,255,0.7)';
       ctx.shadowBlur = 20;
       ctx.stroke();
-      ctx.restore();
 
-      ctx.save();
       ctx.fillStyle = 'rgba(255,255,255,0.18)';
       ctx.fillRect(350, 166, 28, 170);
       ctx.fillRect(310, 180, 24, 150);
       ctx.fillRect(392, 160, 26, 176);
       ctx.fillRect(435, 154, 28, 190);
-      ctx.restore();
 
-      ctx.save();
       ctx.strokeStyle = 'rgba(255,255,255,0.18)';
       ctx.lineWidth = 2;
       ctx.beginPath();
@@ -1128,42 +1080,156 @@
       ctx.moveTo(176, 362);
       ctx.lineTo(586, 362);
       ctx.stroke();
-      ctx.restore();
 
       logoImg.src = canvas.toDataURL('image/jpeg', 0.94);
     }
 
     drawLogoData();
 
-    const langButtons = document.querySelectorAll('.lang-btn');
-
     const translations = {
       en: {
-        home: "Home",
-        projects: "Applied Projects",
-        team: "Leadership & Experts",
-        contact: "Partner with Us"
+        navHome: 'Home',
+        navProjects: 'Applied Projects',
+        navTeam: 'Leadership & Experts',
+        navContact: 'Partner with Us',
+        eyebrow: 'End-to-End Environmental Infrastructure',
+        heroTitle: 'Turning complex water and sustainability challenges into resilient infrastructure.',
+        heroText: 'Alpheus Engineering INC CORP is not just a consultancy — we execute state and municipal infrastructure projects, deliver operational systems, and train the teams that keep them running. From project delivery to plant performance, we are built for public-sector reliability.',
+        ctaProjects: 'Applied Projects',
+        ctaTeam: 'Leadership & Experts',
+        badgeTrack: '5–6 Year Track Record',
+        badgeDelivery: 'Turnkey Delivery',
+        statProjects: 'Mega Projects Completed',
+        statWater: 'Million Tons of Water Purified',
+        statTenders: 'Active State Tenders',
+        capabilitiesEyebrow: 'Capabilities & Solutions',
+        capabilitiesTitle: 'High-impact environmental engineering, delivered with certainty.',
+        capabilitiesText: 'We combine engineering precision, operational discipline, and project execution to deliver infrastructure that is practical, efficient, and built to last.',
+        card1Title: 'Seawater Desalination',
+        card1Text: 'Integrated treatment schemes, process design, and plant execution for water security and industrial supply.',
+        card2Title: 'Air Pollution & Flue Gas Treatment',
+        card2Text: 'Emission control systems and treatment units designed to improve compliance and environmental performance.',
+        card3Title: 'Solar Solutions',
+        card3Text: 'Renewable power integration for utilities, industrial operations, and sustainable infrastructure planning.',
+        card4Title: 'Wastewater Treatment Plants',
+        card4Text: 'Biological, chemical, and physical treatment systems engineered for municipal and industrial outputs.',
+        card5Title: 'Pump Systems Consulting',
+        card5Text: 'Hydraulic design, equipment selection, and optimization services for reliable process flow and performance.',
+        card6Title: 'Infrastructure Operational Training',
+        card6Text: 'Hands-on technical training that prepares operational teams to run and maintain critical environmental systems.',
+        teamEyebrow: 'Leadership & Experts',
+        teamTitle: 'Technical leaders with public-sector delivery experience.',
+        teamText: 'Our leadership combines engineering expertise, strategic project governance, and operational understanding rooted in infrastructure execution.',
+        person1Name: 'Orhan Alp',
+        person1Role: 'Founder & Managing Director',
+        person1Bio: 'A project and utilities executive with deep experience in municipal engineering, infrastructure delivery, and institutional partnerships.',
+        person2Name: 'Mert Yalçın',
+        person2Role: 'Environmental Process Lead',
+        person2Bio: 'Specializes in water treatment systems and environmental process design for public infrastructure, industrial projects, and regulatory compliance.',
+        person3Name: 'Elif Demir',
+        person3Role: 'Operational Training Director',
+        person3Bio: 'Brings practical knowledge in facility operations, maintenance strategy, and training frameworks that improve reliability and sustainability performance.',
+        person4Name: 'Kerem Aydın',
+        person4Role: 'Technical Consultant',
+        person4Bio: 'Supports complex engineering planning across flue gas treatment, solar integration, and operational optimization for large-scale facilities.',
+        person5Name: 'Deniz Ok',
+        person5Role: 'Project Governance Lead',
+        person5Bio: 'Coordinates multidisciplinary teams, public tender strategy, and execution planning for sustainable infrastructure delivery.',
+        contactEyebrow: 'Partner with Us',
+        contactTitle: 'Build lasting environmental infrastructure with a trusted execution partner.',
+        contactText: 'We collaborate with public institutions, municipal authorities, developers, and industrial organizations to deliver sustainable systems and reliable project execution.',
+        contactC1Label: 'Project Delivery',
+        contactC1Title: 'Turnkey Infrastructure',
+        contactC1Text: 'Design, execution, commissioning, and performance support.',
+        contactC2Label: 'Training',
+        contactC2Title: 'Operational Readiness',
+        contactC2Text: 'Technical education for operators and maintenance teams.',
+        ctaMail: 'Email Us',
+        mailTitle: 'Direct Contact',
+        mailText: 'alpheusengineering@gmail.com',
+        focusTitle: 'Execution Focus',
+        focusText: 'Water, energy, environmental compliance, and public infrastructure capability.'
       },
       tr: {
-        home: "Ana Sayfa",
-        projects: "Uygulama Alanları",
-        team: "Liderlik & Uzmanlar",
-        contact: "İş Ortaklığı"
+        navHome: 'Ana Sayfa',
+        navProjects: 'Uygulama Alanları',
+        navTeam: 'Liderlik & Uzmanlar',
+        navContact: 'İş Ortaklığı',
+        eyebrow: 'Son Teknoloji Çevresel Altyapı',
+        heroTitle: 'Karmaşık su ve sürdürülebilirlik sorunlarını güvenilir altyapıya dönüştürüyoruz.',
+        heroText: 'Alpheus Engineering INC CORP sadece danışmanlık yapmıyor; devlet ve belediye altyapı projelerini uyguluyor, operasyonel sistemler üretiyor ve bu sistemleri sürdüren ekipleri eğitiyor. Proje tesliminden tesis performansına kadar, kamu sektörü güvenilirliği için tasarlandık.',
+        ctaProjects: 'Uygulama Alanları',
+        ctaTeam: 'Liderlik & Uzmanlar',
+        badgeTrack: '5–6 Yıllık Başarı Geçmişi',
+        badgeDelivery: 'Anahtar Teslim',
+        statProjects: 'Tamamlanan Mega Proje',
+        statWater: 'Milyon Ton Temizlenmiş Su',
+        statTenders: 'Aktif Devlet İhalesi',
+        capabilitiesEyebrow: 'Yetenekler & Çözümler',
+        capabilitiesTitle: 'Kesin ve yüksek etkili çevresel mühendislik.',
+        capabilitiesText: 'Mühendislik hassasiyeti, operasyonel disiplin ve proje yürütme becerimizle pratik, verimli ve uzun ömürlü altyapı çözümleri sunuyoruz.',
+        card1Title: 'Deniz Suyu Geri Kazanımı',
+        card1Text: 'Su güvenliği ve endüstriyel tedarik için entegre arıtma şemaları, proses tasarımı ve tesis uygulamaları.',
+        card2Title: 'Hava Kirliliği & Duman Gazı Arıtımı',
+        card2Text: 'Uyumluluk ve çevresel performansı artırmak için geliştirilmiş emisyon kontrol sistemleri.',
+        card3Title: 'Güneş Çözümleri',
+        card3Text: 'Enerji santralleri, endüstriyel operasyonlar ve sürdürülebilir altyapı için yenilenebilir enerji entegrasyonu.',
+        card4Title: 'Atıksu Arıtma Tesisleri',
+        card4Text: 'Belediye ve endüstriyel sistemler için biyolojik, kimyasal ve fiziksel arıtma çözümleri.',
+        card5Title: 'Pompa Sistemleri Danışmanlığı',
+        card5Text: 'Güvenilir akış ve performans için hidrolik tasarım, ekipman seçimi ve optimizasyon hizmetleri.',
+        card6Title: 'Altyapı Operasyonel Eğitim',
+        card6Text: 'Önemli çevresel sistemlerin çalıştırılması ve bakımı için uygulamalı teknik eğitimler.',
+        teamEyebrow: 'Liderlik & Uzmanlar',
+        teamTitle: 'Kamu sektörü projeleri deneyimiyle öne çıkan teknik liderler.',
+        teamText: 'Liderlik ekibimiz mühendislik uzmanlığı, stratejik proje yönetimi ve altyapı uygulama tecrübesini bir araya getiriyor.',
+        person1Name: 'Orhan Alp',
+        person1Role: 'Kurucu & Yönetici Direktör',
+        person1Bio: 'Belediye mühendisliği, altyapı teslimatı ve kurumsal ortaklıklar alanında derin deneyime sahip proje ve tesis yöneticisi.',
+        person2Name: 'Mert Yalçın',
+        person2Role: 'Çevresel Proses Lideri',
+        person2Bio: 'Su arıtma sistemleri ve çevresel proses tasarımı alanında kamu altyapısı, endüstriyel projeler ve mevzuat uyumluluğu konularında uzmanlaşmıştır.',
+        person3Name: 'Elif Demir',
+        person3Role: 'Operasyonel Eğitim Direktörü',
+        person3Bio: 'Tesis operasyonu, bakım stratejisi ve eğitim çerçeveleri konusunda pratik bilgi sunarak güvenilirlik ve sürdürülebilir performansı artırır.',
+        person4Name: 'Kerem Aydın',
+        person4Role: 'Teknik Danışman',
+        person4Bio: 'Büyük ölçekli tesislerde duman gazı arıtımı, güneş enerjisi entegrasyonu ve operasyonel optimizasyon alanlarında karmaşık mühendislik planlamasını destekler.',
+        person5Name: 'Deniz Ok',
+        person5Role: 'Proje Yönetişim Lideri',
+        person5Bio: 'Çok disiplinli ekipleri, kamu ihale stratejisini ve sürdürülebilir altyapı teslimatı için yürütme planlamasını koordine eder.',
+        contactEyebrow: 'İş Ortaklığı',
+        contactTitle: 'Güvenilir bir uygulama ortağıyla sürdürülebilir altyapı kurun.',
+        contactText: 'Kamu kurumları, belediyeler, geliştirme firmaları ve endüstriyel kuruluşlarla birlikte sürdürülebilir sistemler ve güvenilir proje yürütmesi için çalışıyoruz.',
+        contactC1Label: 'Proje Teslimatı',
+        contactC1Title: 'Anahtar Teslim Altyapı',
+        contactC1Text: 'Tasarım, uygulama, devreye alma ve performans desteği.',
+        contactC2Label: 'Eğitim',
+        contactC2Title: 'Operasyon Hazırlığı',
+        contactC2Text: 'Operatörler ve bakım ekipleri için teknik eğitim.',
+        ctaMail: 'E-Posta Gönder',
+        mailTitle: 'Doğrudan İletişim',
+        mailText: 'alpheusengineering@gmail.com',
+        focusTitle: 'Uygulama Odaklılık',
+        focusText: 'Su, enerji, çevresel uyum ve kamu altyapısı yetkinliği.'
       }
     };
 
-    function applyLang(lang) {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const i18nEls = document.querySelectorAll('[data-i18n]');
+
+    function applyTranslations(lang) {
       const dict = translations[lang] || translations.en;
-      document.querySelectorAll('.nav a').forEach((link, index) => {
-        const labels = [dict.home, dict.projects, dict.team, dict.contact];
-        if (labels[index]) link.textContent = labels[index];
+      i18nEls.forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key]) el.textContent = dict[key];
       });
     }
 
     langButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
         langButtons.forEach((b) => b.classList.toggle('active', b === btn));
-        applyLang(btn.dataset.lang);
+        applyTranslations(btn.dataset.lang);
       });
     });
 
