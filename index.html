@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpheus Engineering INC CORP</title>
+  <meta name="description" content="Alpheus Engineering INC CORP — environmental engineering, wastewater treatment, desalination, infrastructure and sustainability solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #040b13;
+      --bg-2: #071820;
+      --panel: rgba(11, 20, 27, 0.84);
+      --panel-2: rgba(17, 27, 34, 0.92);
+      --line: rgba(147, 171, 179, 0.18);
+      --text: #edf5f6;
+      --muted: #a8bbbf;
+      --soft: #d7e5e7;
+      --terracotta: #bf7c5a;
+      --green: #567b69;
+      --brown: #433129;
+      --steel-1: #dfe8ed;
+      --steel-2: #8ea0ad;
+      --steel-3: #4b5f74;
+      --cyan: #53d2ff;
+      --cyan-2: #0f8ef0;
+      --shadow: rgba(0, 0, 0, 0.55);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family:"Inter", sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(13, 64, 88, 0.5), transparent 30%),
+        radial-gradient(circle at 75% 10%, rgba(15, 142, 240, 0.08), transparent 30%),
+        linear-gradient(180deg, #020a11 0%, #06131b 12%, #050d15 100%);
+      color:var(--text);
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container{
+      width:min(1200px, calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(3, 8, 12, 0.62);
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+
+    .brand-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:84px;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:62px;
+      height:62px;
+      flex-shrink:0;
+    }
+
+    .brand-word{
+      font-size:20px;
+      letter-spacing:0.22em;
+      font-weight:800;
+      color:#eef7fb;
+      white-space:nowrap;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      color:var(--muted);
+      font-size:0.86rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+
+    .nav a{
+      opacity:0.8;
+      transition:0.25s ease;
+      position:relative;
+    }
+
+    .nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-10px;
+      width:100%;
+      height:1px;
+      background:linear-gradient(90deg, var(--cyan), transparent);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:0.25s ease;
+    }
+
+    .nav a:hover{
+      color:var(--text);
+      opacity:1;
+    }
+
+    .nav a:hover::after{ transform:scaleX(1); }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:6px;
+    }
+
+    .lang-btn{
+      border:0;
+      background:transparent;
+      color:var(--muted);
+      padding:8px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:600;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      transition:0.25s ease;
+    }
+
+    .lang-btn.active{
+      background:linear-gradient(180deg, rgba(83,210,255,0.14), rgba(83,210,255,0.02));
+      color:var(--text);
+      box-shadow: inset 0 0 0 1px rgba(83,210,255,0.35);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,0.04);
+      background:
+        radial-gradient(circle at 50% 12%, rgba(14,128,205,0.12), transparent 24%),
+        linear-gradient(180deg, rgba(2,9,15,0.8), rgba(5,13,18,0.7));
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.2), rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.15) 100%);
+      pointer-events:none;
+    }
+
+    .hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.02fr 0.98fr;
+      align-items:center;
+      min-height:760px;
+      gap:28px;
+      padding:48px 0 36px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      letter-spacing:0.25em;
+      font-size:0.72rem;
+      font-weight:700;
+      color:var(--cyan);
+      text-transform:uppercase;
+      opacity:0.9;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      letter-spacing:-0.06em;
+      line-height:0.96;
+      font-weight:900;
+      max-width:620px;
+    }
+
+    .hero-copy p{
+      max-width:620px;
+      font-size:1.08rem;
+      line-height:1.8;
+      color:var(--soft);
+      margin:24px 0 30px;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-bottom:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 26px;
+      border-radius:14px;
+      font-weight:700;
+      letter-spacing:0.04em;
+      transition:0.25s ease;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg, #eb8d60, #d97956 35%, #7e5a47);
+      color:#111c20;
+      box-shadow:0 16px 34px rgba(214,120,84,0.24);
+    }
+
+    .btn.secondary{
+      background:rgba(9, 18, 24, 0.7);
+      color:var(--text);
+      border-color: rgba(110, 175, 216, 0.38);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 28px rgba(0,0,0,0.3);
+    }
+
+    .trust-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:10px;
+    }
+
+    .trust-item{
+      min-width:160px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(10,16,21,0.5);
+      color:var(--muted);
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:0.76rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+
+    .trust-item .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(180deg, var(--cyan), var(--cyan-2));
+      box-shadow:0 0 16px rgba(83,210,255,0.75);
+    }
+
+    .hero-visual{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      min-height:620px;
+    }
+
+    .visual-shell{
+      width:min(760px, 100%);
+      min-height:560px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(115, 153, 175, 0.18);
+      border-radius:30px;
+      background:radial-gradient(circle at 50% 25%, rgba(20,63,84,0.2), rgba(8,16,22,0.18) 42%, rgba(8,16,22,0.64) 72%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 28px 60px rgba(0,0,0,0.4);
+      overflow:hidden;
+    }
+
+    .visual-shell::before{
+      content:"";
+      position:absolute;
+      inset:10% 12%;
+      border-radius:22px;
+      border:1px solid rgba(83,210,255,0.12);
+      pointer-events:none;
+    }
+
+    .hero-svg{
+      width:100%;
+      max-width:700px;
+      height:auto;
+      filter: drop-shadow(0 0 18px rgba(83,210,255,0.18));
+      transform:translateY(8px);
+    }
+
+    .stats{
+      position:relative;
+      z-index:2;
+      width:min(1180px, calc(100% - 48px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+      transform:translateY(50%);
+    }
+
+    .stat{
+      background:rgba(15, 24, 30, 0.8);
+      border:1px solid rgba(131, 163, 178, 0.18);
+      border-radius:18px;
+      padding:26px 22px;
+      box-shadow:0 18px 38px rgba(0,0,0,0.22);
+    }
+
+    .stat-value{
+      display:block;
+      font-size: clamp(2rem, 2.8vw, 3rem);
+      font-weight:800;
+      letter-spacing:-0.06em;
+      color:var(--text);
+      margin-bottom:8px;
+    }
+
+    .stat-label{
+      color:var(--muted);
+      font-size:0.8rem;
+      letter-spacing:0.1em;
+      text-transform:uppercase;
+    }
+
+    section.section{
+      padding:120px 0;
+    }
+
+    .section.alt{
+      background:linear-gradient(180deg, rgba(7,17,23,0.28), rgba(8,16,20,0.9));
+      border-top:1px solid rgba(255,255,255,0.04);
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+
+    .section-head{
+      margin-bottom:42px;
+      max-width:780px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size: clamp(2.2rem, 3.7vw, 3.4rem);
+      letter-spacing:-0.06em;
+      line-height:1.1;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      margin-top:14px;
+      line-height:1.8;
+      font-size:1.04rem;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:22px;
+    }
+
+    .project-card{
+      position:relative;
+      padding:28px 22px 20px;
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(15,24,32,0.92), rgba(11,18,25,0.84)),
+        rgba(10,15,17,0.9);
+      border:1px solid rgba(143,170,185,0.15);
+      min-height:260px;
+      overflow:hidden;
+      transition:0.25s ease;
+    }
+
+    .project-card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:3px;
+      background:linear-gradient(90deg, var(--cyan), rgba(83,210,255,0.05));
+      opacity:0.8;
+    }
+
+    .project-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(83,210,255,0.32);
+      box-shadow:0 22px 36px rgba(0,0,0,0.28);
+    }
+
+    .card-icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      margin-bottom:22px;
+      border:1px solid rgba(112,170,210,0.25);
+      background: radial-gradient(circle at 30% 25%, rgba(83,210,255,0.24), rgba(83,210,255,0.06) 35%, rgba(11,18,21,0.84) 100%);
+      color:var(--cyan);
+      font-size:1.6rem;
+      font-weight:800;
+    }
+
+    .project-card h3{
+      margin:0 0 12px;
+      font-size:1.35rem;
+      letter-spacing:-0.04em;
+    }
+
+    .project-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.98rem;
+    }
+
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:24px;
+      margin-top:26px;
+    }
+
+    .team-card{
+      background:rgba(10,16,21,0.72);
+      border:1px solid rgba(143,170,185,0.15);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 18px 28px rgba(0,0,0,0.14);
+    }
+
+    .portrait{
+      height:310px;
+      background:
+        linear-gradient(180deg, rgba(116,124,132,0.1), rgba(10,14,18,0.4)),
+        radial-gradient(circle at 40% 20%, rgba(210,229,235,0.7), rgba(102,109,119,0.32) 18%, rgba(20,26,31,0.6) 52%, rgba(5,8,10,0.9) 100%);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .portrait::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:26%;
+      transform:translateX(-50%);
+      width:112px;
+      height:112px;
+      border-radius:50%;
+      background:radial-gradient(circle at 35% 30%, #f1f8fa, #bccacb 36%, #6f7a80 70%, #3c4652 100%);
+      box-shadow:0 0 0 12px rgba(21,27,32,0.45);
+    }
+
+    .portrait::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:0;
+      transform:translateX(-50%);
+      width:170px;
+      height:120px;
+      border-radius:50% 50% 0 0 / 100% 100% 0 0;
+      background:linear-gradient(180deg, rgba(29,39,47,0.9), rgba(17,21,25,0.9));
+      box-shadow:0 -16px 28px rgba(0,0,0,0.18);
+    }
+
+    .team-copy{
+      padding:22px 18px 20px;
+    }
+
+    .team-copy h3{
+      margin:0 0 8px;
+      font-size:1.28rem;
+      letter-spacing:-0.04em;
+    }
+
+    .role{
+      display:inline-block;
+      color:var(--cyan);
+      font-size:0.72rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .team-copy p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.96rem;
+    }
+
+    .contact-wrap{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:26px;
+      align-items:stretch;
+    }
+
+    .contact-panel{
+      background:linear-gradient(180deg, rgba(12,18,25,0.9), rgba(9,15,19,0.75));
+      border:1px solid rgba(143,170,185,0.18);
+      border-radius:26px;
+      padding:32px 28px;
+      min-height:360px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .contact-panel h3{
+      margin:0 0 14px;
+      font-size: clamp(2rem, 2.8vw, 3rem);
+      letter-spacing:-0.06em;
+    }
+
+    .contact-panel p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+      max-width:620px;
+    }
+
+    .contact-points{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin-top:30px;
+    }
+
+    .mini-card{
+      border:1px solid rgba(143,170,185,0.15);
+      background:rgba(8,14,18,0.74);
+      border-radius:18px;
+      padding:18px 16px;
+    }
+
+    .mini-card .kicker{
+      display:block;
+      color:var(--cyan);
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      font-size:0.68rem;
+      margin-bottom:8px;
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:6px;
+    }
+
+    .mini-card span{
+      display:block;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .contact-side{
+      background: radial-gradient(circle at 50% 10%, rgba(83,210,255,0.16), rgba(9,15,20,0.7) 30%, rgba(9,15,20,0.96) 100%);
+      border:1px solid rgba(143,170,185,0.18);
+      border-radius:26px;
+      padding:30px 24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:18px;
+    }
+
+    .contact-side .cta{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      min-height:58px;
+      font-weight:700;
+      letter-spacing:0.04em;
+      border-radius:16px;
+      background:linear-gradient(135deg, rgba(83,210,255,0.18), rgba(14,69,99,0.28));
+      border:1px solid rgba(83,210,255,0.42);
+      color:var(--text);
+      transition:0.25s ease;
+    }
+
+    .contact-side .cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 24px rgba(0,0,0,0.22);
+    }
+
+    .contact-side .tall{
+      background:rgba(10,16,20,0.8);
+      border:1px solid rgba(143,170,185,0.15);
+      border-radius:18px;
+      padding:18px 16px;
+    }
+
+    .contact-side .tall strong{
+      display:block;
+      color:var(--text);
+      font-size:1.05rem;
+      margin-bottom:6px;
+    }
+
+    .contact-side .tall span{
+      color:var(--muted);
+      line-height:1.65;
+      display:block;
+    }
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.04);
+      background:rgba(5,10,14,0.82);
+      color:var(--muted);
+      padding:28px 0;
+    }
+
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      font-size:0.86rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .contact-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .projects-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .team-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+      .brand-row{
+        flex-wrap:wrap;
+        padding:16px 0;
+      }
+
+      .nav{
+        order:3;
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        padding-bottom:4px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        width:min(100% - 28px, 1200px);
+      }
+
+      .hero-grid{
+        min-height:unset;
+        padding-top:26px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+        transform:none;
+        margin-top:18px;
+        margin-bottom:18px;
+      }
+
+      .projects-grid,
+      .team-grid,
+      .contact-points{
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        gap:14px 18px;
+        font-size:0.72rem;
+      }
+
+      .brand-word{
+        letter-spacing:0.12em;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .cta-row{
+        flex-direction:column;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container brand-row">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 220 220" aria-label="Alpheus logo" role="img">
+          <defs>
+            <linearGradient id="metalA" x1="0%" x2="100%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#f8fbfd"/>
+              <stop offset="22%" stop-color="#d6dde3"/>
+              <stop offset="48%" stop-color="#9caab5"/>
+              <stop offset="68%" stop-color="#edf2f6"/>
+              <stop offset="100%" stop-color="#6a7d8a"/>
+            </linearGradient>
+            <linearGradient id="glassA" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#14b7ff"/>
+              <stop offset="100%" stop-color="#0a4d9a"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(20,10)">
+            <path d="M26 170 L82 46 L97 46 L160 170 L125 170 L107 129 L74 129 L57 170 Z" fill="url(#metalA)" opacity="0.96"/>
+            <path d="M146 164 L164 126 L179 126 L181 164 Z" fill="url(#metalA)"/>
+            <path d="M52 170 L92 76 L106 76 L66 170 Z" fill="rgba(255,255,255,0.18)"/>
+            <path d="M106 76 L146 170 L128 170 L94 76 Z" fill="rgba(0,0,0,0.2)"/>
+            <path d="M69 122 L110 122 L79 170 L39 170 Z" fill="rgba(255,255,255,0.08)"/>
+            <path d="M40 170 C64 174, 102 170, 112 140 C126 100, 142 86, 165 74" fill="none" stroke="url(#glassA)" stroke-width="8" stroke-linecap="round" opacity="0.98"/>
+            <path d="M162 72 C173 70, 185 76, 194 86" fill="none" stroke="url(#glassA)" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+            <rect x="94" y="92" width="18" height="74" rx="4" fill="rgba(255,255,255,0.26)"/>
+            <rect x="72" y="102" width="18" height="62" rx="4" fill="rgba(255,255,255,0.18)"/>
+            <rect x="118" y="106" width="18" height="58" rx="4" fill="rgba(255,255,255,0.14)"/>
+            <rect x="136" y="96" width="18" height="72" rx="4" fill="rgba(255,255,255,0.12)"/>
+          </g>
+        </svg>
+        <div class="brand-word">ALPHEUS</div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#projects">Applied Projects</a>
+        <a href="#team">Leadership & Experts</a>
+        <a href="#contact">Partner with Us</a>
+      </nav>
+
+      <div class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">End-to-End Environmental Infrastructure</div>
+          <h1>Turning complex water and sustainability challenges into resilient infrastructure.</h1>
+          <p>
+            Alpheus Engineering INC CORP is not just a consultancy — we execute state and municipal infrastructure projects,
+            deliver operational systems, and train the teams that keep them running. From project delivery to plant performance,
+            we are built for public-sector reliability.
+          </p>
+
+          <div class="cta-row">
+            <a href="#projects" class="btn primary">Applied Projects</a>
+            <a href="#team" class="btn secondary">Leadership & Experts</a>
+          </div>
+
+          <div class="trust-badges">
+            <div class="trust-item"><span class="dot"></span> <span>5–6 Year Track Record</span></div>
+            <div class="trust-item"><span class="dot"></span> <span>Turnkey Delivery</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Biological treatment plant visual">
+          <div class="visual-shell">
+            <svg class="hero-svg" viewBox="0 0 760 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wastewater reactor wireframe">
+              <defs>
+                <linearGradient id="steelGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+                  <stop offset="0%" stop-color="#c8d9e5"/>
+                  <stop offset="30%" stop-color="#edf5fb"/>
+                  <stop offset="60%" stop-color="#8da7b8"/>
+                  <stop offset="100%" stop-color="#edf5fb"/>
+                </linearGradient>
+                <linearGradient id="cyanGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+                  <stop offset="0%" stop-color="#75dcff"/>
+                  <stop offset="50%" stop-color="#05a7ff"/>
+                  <stop offset="100%" stop-color="#0d6ae1"/>
+                </linearGradient>
+              </defs>
+
+              <g opacity="0.8">
+                <path d="M120 420 L220 350 L540 350 L640 420" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+                <path d="M240 350 L240 150 L520 150 L520 350" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                <path d="M180 410 L180 230 L580 230 L580 410" fill="none" stroke="url(#steelGrad)" stroke-width="2.2"/>
+                <path d="M190 240 L190 400 L570 400 L570 240" fill="none" stroke="rgba(148,183,204,0.35)" stroke-width="1.2"/>
+                <path d="M210 200 L210 410" stroke="url(#steelGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M265 200 L265 410" stroke="url(#steelGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M320 200 L320 410" stroke="url(#steelGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M375 200 L375 410" stroke="url(#steelGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M430 200 L430 410" stroke="url(#steelGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M485 200 L485 410" stroke="url(#steelGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M540 200 L540 410" stroke="url(#steelGrad)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M170 275 L590 275" stroke="url(#steelGrad)" stroke-width="2" opacity="0.75"/>
+                <path d="M170 325 L590 325" stroke="url(#steelGrad)" stroke-width="2" opacity="0.75"/>
+                <path d="M170 375 L590 375" stroke="url(#steelGrad)" stroke-width="2" opacity="0.75"/>
+              </g>
+
+              <g>
+                <path d="M132 440 L250 370 L542 370 L660 440" fill="none" stroke="url(#cyanGrad)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M610 450 L660 440" stroke="url(#cyanGrad)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M620 448 L620 500" stroke="url(#cyanGrad)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M620 500 L570 500" stroke="url(#cyanGrad)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M520 500 L570 500" stroke="url(#cyanGrad)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M455 500 L520 500" stroke="url(#cyanGrad)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M345 500 L455 500" stroke="url(#cyanGrad)" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="610" cy="440" r="8" fill="#75dcff"/>
+                <circle cx="620" cy="500" r="8" fill="#75dcff"/>
+                <circle cx="250" cy="370" r="8" fill="#75dcff"/>
+              </g>
+
+              <g transform="translate(25 40)">
+                <path d="M10 120 C110 60, 190 35, 310 32" fill="none" stroke="url(#cyanGrad)" stroke-width="4" opacity="0.9" stroke-linecap="round"/>
+                <path d="M310 32 C405 30, 490 40, 580 98" fill="none" stroke="url(#cyanGrad)" stroke-width="4" opacity="0.9" stroke-linecap="round"/>
+                <path d="M580 98 C610 132, 620 155, 620 190" fill="none" stroke="url(#cyanGrad)" stroke-width="4" opacity="0.9" stroke-linecap="round"/>
+              </g>
+
+              <g opacity="0.7">
+                <circle cx="188" cy="170" r="4" fill="#7de1ff"/>
+                <circle cx="252" cy="165" r="4" fill="#7de1ff"/>
+                <circle cx="318" cy="165" r="4" fill="#7de1ff"/>
+                <circle cx="384" cy="165" r="4" fill="#7de1ff"/>
+                <circle cx="445" cy="165" r="4" fill="#7de1ff"/>
+                <circle cx="510" cy="170" r="4" fill="#7de1ff"/>
+              </g>
+
+              <g opacity="0.28" stroke="rgba(255,255,255,0.75)" stroke-width="1.3">
+                <path d="M140 120 L650 120"/>
+                <path d="M140 170 L650 170"/>
+                <path d="M140 220 L650 220"/>
+                <path d="M140 270 L650 270"/>
+                <path d="M140 320 L650 320"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="Company statistics">
+        <div class="stat">
+          <span class="stat-value" data-target="48">0</span>
+          <span class="stat-label">Mega Projects Completed</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-target="2.9">0</span>
+          <span class="stat-label">Million Tons of Water Purified</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-target="18">0</span>
+          <span class="stat-label">Active State Tenders</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Capabilities & Solutions</div>
+          <h2>High-impact environmental engineering, delivered with certainty.</h2>
+          <p>
+            We combine engineering precision, operational discipline, and project execution to deliver infrastructure that is practical,
+            efficient, and built to last.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="card-icon">◈</div>
+            <h3>Seawater Desalination</h3>
+            <p>Integrated treatment schemes, process design, and plant execution for water security and industrial supply.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="card-icon">◬</div>
+            <h3>Air Pollution & Flue Gas Treatment</h3>
+            <p>Emission control systems and treatment units designed to improve compliance and environmental performance.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="card-icon">△</div>
+            <h3>Solar Solutions</h3>
+            <p>Renewable power integration for utilities, industrial operations, and sustainable infrastructure planning.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="card-icon">▣</div>
+            <h3>Wastewater Treatment Plants</h3>
+            <p>Biological, chemical, and physical treatment systems engineered for municipal and industrial outputs.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="card-icon">▤</div>
+            <h3>Pump Systems Consulting</h3>
+            <p>Hydraulic design, equipment selection, and optimization services for reliable process flow and performance.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="card-icon">◎</div>
+            <h3>Infrastructure Operational Training</h3>
+            <p>Hands-on technical training that prepares operational teams to run and maintain critical environmental systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Leadership & Experts</div>
+          <h2>Technical leaders with public-sector delivery experience.</h2>
+          <p>Our leadership combines engineering expertise, strategic project governance, and operational understanding rooted in infrastructure execution.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="portrait" aria-hidden="true"></div>
+            <div class="team-copy">
+              <h3>Orhan Alp</h3>
+              <span class="role">Founder & Managing Director</span>
+              <p>A project and utilities executive with deep experience in municipal engineering, infrastructure delivery, and institutional partnerships.</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="portrait" aria-hidden="true"></div>
+            <div class="team-copy">
+              <h3>Mert Yalçın</h3>
+              <span class="role">Environmental Process Lead</span>
+              <p>Specializes in water treatment systems and environmental process design for public infrastructure, industrial projects, and regulatory compliance.</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="portrait" aria-hidden="true"></div>
+            <div class="team-copy">
+              <h3>Elif Demir</h3>
+              <span class="role">Operational Training Director</span>
+              <p>Brings practical knowledge in facility operations, maintenance strategy, and training frameworks that improve reliability and sustainability performance.</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="portrait" aria-hidden="true"></div>
+            <div class="team-copy">
+              <h3>Kerem Aydın</h3>
+              <span class="role">Technical Consultant</span>
+              <p>Supports complex engineering planning across flue gas treatment, solar integration, and operational optimization for large-scale facilities.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-panel">
+            <div>
+              <div class="eyebrow">Partner with Us</div>
+              <h3>Build lasting environmental infrastructure with a trusted execution partner.</h3>
+              <p>
+                We collaborate with public institutions, municipal authorities, developers, and industrial organizations
+                to deliver sustainable systems and reliable project execution.
+              </p>
+            </div>
+
+            <div class="contact-points">
+              <div class="mini-card">
+                <span class="kicker">Project Delivery</span>
+                <strong>Turnkey Infrastructure</strong>
+                <span>Design, execution, commissioning, and performance support.</span>
+              </div>
+              <div class="mini-card">
+                <span class="kicker">Training</span>
+                <strong>Operational Readiness</strong>
+                <span>Technical education for operators and maintenance teams.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-side">
+            <a class="cta" href="mailto:alpheusengineering@gmail.com">Email Us</a>
+            <div class="tall">
+              <strong>Direct Contact</strong>
+              <span>alpheusengineering@gmail.com</span>
+            </div>
+            <div class="tall">
+              <strong>Execution Focus</strong>
+              <span>Water, energy, environmental compliance, and public infrastructure capability.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 ALPHEUS ENGINEERING INC CORP</div>
+      <div>Water • Air • Energy • Sustainability</div>
+    </div>
+  </footer>
+
+  <script>
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    const translations = {
+      en: {
+        home: "Home",
+        projects: "Applied Projects",
+        team: "Leadership & Experts",
+        contact: "Partner with Us"
+      },
+      tr: {
+        home: "Ana Sayfa",
+        projects: "Uygulama Alanları",
+        team: "Liderlik & Uzmanlar",
+        contact: "İş Ortaklığı"
+      }
+    };
+
+    function applyLang(lang) {
+      const dict = translations[lang] || translations.en;
+      document.querySelectorAll('.nav a').forEach((link, index) => {
+        const labels = [dict.home, dict.projects, dict.team, dict.contact];
+        if (labels[index]) link.textContent = labels[index];
+      });
+    }
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        langButtons.forEach((b) => b.classList.toggle('active', b === btn));
+        applyLang(btn.dataset.lang);
+      });
+    });
+
+    function animateCounter(el, target) {
+      const duration = 1400;
+      const start = performance.now();
+      const hasDecimal = target % 1 !== 0;
+
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = target * eased;
+        el.textContent = hasDecimal ? current.toFixed(1) : Math.round(current);
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    const counters = document.querySelectorAll('[data-target]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const value = Number(entry.target.dataset.target);
+          animateCounter(entry.target, value);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.45 });
+
+    counters.forEach((counter) => io.observe(counter));
+  </script>
+</body>
+</html>
